@@ -9,7 +9,7 @@
 
                 transition: 'slide',
                 skin: 'flat',
-                initial: 'components/homeView/view.html',
+                initial: 'components/authenticationView/view.html',
                 statusBarStyle: 'black-translucent'
             });
         });
