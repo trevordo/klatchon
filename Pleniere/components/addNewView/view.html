@@ -1,0 +1,38 @@
+<div data-role="view" data-title="Add Seminar" data-layout="main" data-model="app.addNewView" data-show="app.addNewView.onShow" data-after-show="app.addNewView.afterShow">
+    <div id="addNewViewModel" class="form-view">
+        <form>
+            <ul class="form-content" data-role="listview" data-style="inset">
+                <li>
+
+                    <label>Title
+                        <input data-bind="value: addNewViewModel.fields.title" placeholder="Presentation Title" type="text">
+                    </label>
+
+                </li>
+                <li>
+
+                    <label>Speaker Name
+                        <input data-bind="value: addNewViewModel.fields.speakername" type="text">
+                    </label>
+
+                </li>
+                <li>
+
+                    <label>Username
+                        <input data-bind="value: addNewViewModel.fields.username" type="text">
+                    </label>
+
+                </li>
+            </ul>
+
+            <div class="button-group">
+                <a data-role="button" data-bind="events: { click: addNewViewModel.cancel }">Cancel</a>
+                <a class="primary" data-role="button" data-bind="events: { click: addNewViewModel.submit }">Confirm</a>
+            </div>
+        </form>
+        <!-- START_CUSTOM_CODE_addNewViewModel -->
+        <!-- END_CUSTOM_CODE_addNewViewModel -->
+    </div>
+    <!-- START_CUSTOM_CODE_addNewView -->
+    <!-- END_CUSTOM_CODE_addNewView -->
+</div>

@@ -1,15 +1,130 @@
 {
   "type": "kendo-ui-mobile",
-  "isNew": true,
+  "views": [
+    {
+      "type": "kendo-ui-mobile:view",
+      "name": "homeView",
+      "components": [
+        {
+          "type": "kendo-ui-mobile:about",
+          "name": "homeViewModel",
+          "appName": "Pleniere",
+          "appDescription": "ABC",
+          "contactButton": true,
+          "contactLabel": "Contact us",
+          "contactMail": "support@example.com",
+          "facebookButton": true,
+          "facebookLabel": "Like us on Facebook",
+          "facebookLink": "https://www.facebook.com/Telerik",
+          "twitterButton": true,
+          "twitterLabel": "Follow us on Twitter",
+          "twitterLink": "https://twitter.com/telerik"
+        }
+      ],
+      "title": "Pleniere",
+      "addToNavigation": true,
+      "icon": "home"
+    },
+    {
+      "type": "kendo-ui-mobile:view",
+      "name": "pleniereListView",
+      "components": [
+        {
+          "type": "kendo-ui-mobile:list",
+          "name": "pleniereListViewModel",
+          "dataProvider": "defaultProvider",
+          "collection": "SeminarList",
+          "iconField": false,
+          "headerField": "title",
+          "subHeaderField": "speakername",
+          "masterDetails": true,
+          "detailHeaderField": "title",
+          "detailSubHeaderField": "startdate",
+          "detailDescriptionField": "speakername",
+          "pullToRefresh": true,
+          "endlessScroll": true
+        }
+      ],
+      "title": "Upcoming Seminar",
+      "addToNavigation": true,
+      "icon": "organize"
+    },
+    {
+      "type": "kendo-ui-mobile:view",
+      "name": "addNewView",
+      "components": [
+        {
+          "type": "kendo-ui-mobile:form",
+          "components": [
+            {
+              "type": "kendo-ui-mobile:field",
+              "name": "title",
+              "title": "Title",
+              "inputType": "text",
+              "placeholder": "Presentation Title"
+            },
+            {
+              "type": "kendo-ui-mobile:field",
+              "name": "speakername",
+              "title": "Speaker Name",
+              "inputType": "text"
+            },
+            {
+              "type": "kendo-ui-mobile:field",
+              "name": "username",
+              "title": "Username",
+              "inputType": "text"
+            }
+          ],
+          "name": "addNewViewModel",
+          "submitButton": "Confirm",
+          "cancelButton": "Cancel"
+        }
+      ],
+      "title": "Add Seminar",
+      "addToNavigation": true,
+      "icon": "mostviewed"
+    },
+    {
+      "type": "kendo-ui-mobile:view",
+      "name": "authenticationView",
+      "components": [
+        {
+          "type": "kendo-ui-mobile:authentication",
+          "name": "authenticationViewModel",
+          "dataProvider": "defaultProvider",
+          "emailLabel": "Email",
+          "passwordLabel": "Password",
+          "signinLabel": "Sign In",
+          "signinRedirect": "homeView",
+          "enableRegistration": true,
+          "gotoRegisterLabel": "Register",
+          "registerEmailLabel": "Email",
+          "registerPasswordLabel": "Password",
+          "registerNameLabel": "Name",
+          "registerLabel": "Register",
+          "registerRedirect": "homeView",
+          "gotoSigninLabel": "Sign In"
+        }
+      ],
+      "title": "Sign-in to Pleniere",
+      "addToNavigation": false
+    }
+  ],
   "dataProviders": [
     {
       "type": "kendo-ui-mobile:dataProvider",
-      "title": "DefaultProvider",
       "name": "defaultProvider",
+      "everliveUrl": "//platform.telerik.com/bs-api/v1/",
+      "title": "DefaultProvider",
       "source": "everlive",
-      "offlineStorage": true,
       "everliveKey": "koWUnpcxRvIqHF7T",
-      "everliveUrl": ""
+      "offlineStorage": true
     }
-  ]
+  ],
+  "name": "kendoUiMobileApp",
+  "navigation": "tabstrip",
+  "view": "homeView",
+  "transition": "slide",
+  "skin": "flat"
 }
