@@ -1,0 +1,48 @@
+{
+  "ProjectName": "Pleniere",
+  "ProjectGuid": "106d6a50-581a-4e38-a412-bb24344fbf81",
+  "projectVersion": 1,
+  "AppIdentifier": "com.telerik.Pleniere",
+  "DisplayName": "Pleniere",
+  "Author": "",
+  "Description": "Pleniere",
+  "BundleVersion": "1.0",
+  "AndroidVersionCode": "1",
+  "iOSDeviceFamily": [
+    "1",
+    "2"
+  ],
+  "iOSBackgroundMode": [],
+  "ProjectTypeGuids": "{070BCB52-5A75-4F8C-A973-144AF0EAFCC9}",
+  "FrameworkVersion": "3.7.0",
+  "AndroidPermissions": [
+    "android.permission.INTERNET"
+  ],
+  "DeviceOrientations": [
+    "Portrait",
+    "Landscape"
+  ],
+  "AndroidHardwareAcceleration": "false",
+  "iOSStatusBarStyle": "Default",
+  "Framework": "Cordova",
+  "WP8TileTitle": "",
+  "WP8Publisher": "",
+  "WP8Capabilities": [
+    "ID_CAP_NETWORKING",
+    "ID_CAP_WEBBROWSERCOMPONENT"
+  ],
+  "WP8Requirements": [],
+  "WP8PublisherID": "{aa7c4c89-c34f-4660-8ce3-54d2a572794c}",
+  "WP8ProductID": "{41fda48c-a1fa-4120-98e7-59edb17991fd}",
+  "WPSdk": "8.0",
+  "WP8PackageIdentityName": "1234Telerik.Pleniere",
+  "WP8WindowsPublisherName": "CN=Telerik",
+  "WP8SupportedResolutions": [
+    "ID_RESOLUTION_WVGA",
+    "ID_RESOLUTION_WXGA",
+    "ID_RESOLUTION_HD720P"
+  ],
+  "CorePlugins": [
+    "org.apache.cordova.network-information"
+  ]
+}
