@@ -42,7 +42,6 @@
     "ID_RESOLUTION_HD720P"
   ],
   "CorePlugins": [
-    "nl.x-services.plugins.calendar@4.4.4",
     "org.apache.cordova.camera",
     "org.apache.cordova.network-information"
   ]

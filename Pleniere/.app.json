@@ -51,42 +51,6 @@
     },
     {
       "type": "kendo-ui-mobile:view",
-      "name": "addNewView",
-      "components": [
-        {
-          "type": "kendo-ui-mobile:form",
-          "components": [
-            {
-              "type": "kendo-ui-mobile:field",
-              "name": "title",
-              "title": "Title",
-              "inputType": "text",
-              "placeholder": "Presentation Title"
-            },
-            {
-              "type": "kendo-ui-mobile:field",
-              "name": "speakername",
-              "title": "Speaker Name",
-              "inputType": "text"
-            },
-            {
-              "type": "kendo-ui-mobile:field",
-              "name": "username",
-              "title": "Username",
-              "inputType": "text"
-            }
-          ],
-          "name": "addNewViewModel",
-          "submitButton": "Confirm",
-          "cancelButton": "Cancel"
-        }
-      ],
-      "title": "Add Seminar",
-      "addToNavigation": true,
-      "icon": "mostviewed"
-    },
-    {
-      "type": "kendo-ui-mobile:view",
       "name": "authenticationView",
       "components": [
         {
@@ -109,6 +73,41 @@
       ],
       "title": "Sign-in to Pleniere",
       "addToNavigation": false
+    },
+    {
+      "type": "kendo-ui-mobile:view",
+      "name": "formView",
+      "components": [
+        {
+          "type": "kendo-ui-mobile:form",
+          "components": [
+            {
+              "type": "kendo-ui-mobile:field",
+              "name": "username",
+              "title": "Username",
+              "inputType": "text"
+            },
+            {
+              "type": "kendo-ui-mobile:field",
+              "name": "username1",
+              "title": "Username",
+              "inputType": "text"
+            },
+            {
+              "type": "kendo-ui-mobile:field",
+              "name": "date",
+              "title": "Date",
+              "inputType": "date"
+            }
+          ],
+          "name": "formViewModel",
+          "submitButton": "Confirm",
+          "cancelButton": "Cancel"
+        }
+      ],
+      "title": "Form",
+      "addToNavigation": true,
+      "icon": "mostviewed"
     }
   ],
   "dataProviders": [
