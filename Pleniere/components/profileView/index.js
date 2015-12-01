@@ -1,90 +1,65 @@
 /**
  * profile view model
  */
+'use strict'
 
+app.profileView = (function () {
 
-app.profileView = kendo.observable({
-    onShow: function() {},
-    afterShow: function() {}
-});
+    var profileModel = kendo.observable({
+        firstname: "",
+        lastname: "",
+        Displayname: "",
 
-var app = app || {};
+    });
 
-app.profile = (function () {
-    'use strict'
-		var profileViewModel = (function () {
-        
-        var profileModel = {
-            fields: {
-                firstname: {
-                    field: 'firstname',
-                    defaultValue: null
-                },
-                lastname: {
-                    field: 'lastname',
-                    defaultValue: null
-                },
-                DisplayName: {
-                    field: 'DisplayName',
-                    defaultValue: null
-                },
-                UserId: {
-                    field: 'UserId',
-                    defaultValue: null
-                }
-            },
+    var details = {
+        onShow: function (e) {
             
-        };
+            var everliveApiKey = "koWUnpcxRvIqHF7T";
+				var everliveScheme = 'https';
 
-        var DataSourceOptions = {
-            type: 'everlive',
-            transport: {
-                typeName: 'Users'
-            },
-            schema: {
-                model: profileModel
-            },
-            User: function () {
-
-                var userId = this.get('UserId');
-
-                var user = $.grep(app.Users.users(), function (e) {
-                    return e.Id === userId;
-                })[0];
-
-                return user ? {
-                    DisplayName: user.DisplayName,
-                } : {
-                    DisplayName: 'Anonymous',
-                };
-            }
-        };
-        
-        return {
-            Users: DataSourceOptions
-        };
+            var el = new Everlive({
+					apiKey: everliveApiKey,
+					scheme: everliveScheme
+				});
             
-        var DataSource = new kendo.data.DataSource(DataSourceOptions),
-        profileDetailsModel = kendo.observable({
-            dataSource: DataSource,
-            detailsShow: function(e) {
-                var userUId = this.get('user'),
-                    dataSource = profileDetailsModel.get('dataSource'),
-                    userModel = dataSource.getByUid(userUId);
+            el.Users.currentUser()
+                .then(function (data) {
+                        alert(JSON.stringify(data));
+                    },
+                    function (error) {
+                        alert(JSON.stringify(error));
+                    });
+
+            var dataProvider,
+                typeName,
+                userId,
+                vm;
+
+
+            dataProvider = app.data.defaultProvider;
+            typeName = "Users";
+            userId =  "";
+                
+            dataProvider.data(typeName).getById(userId, function (data) {
+                var resultItem = data.result;
+                profileModel.set("firstname", resultItem.firstname);
+                profileModel.set("lastname", resultItem.lastname);
+                profileModel.set("DisplayName", resultItem.DisplayName);
                
-                profileDetailsModel.set('currentItem', userModel);
-            },
-            currentItem: null
-        });
-      
-        
-    }());
-    
-    return profileViewModel;
+            }, function (err) {
+                alert("There was an error" + err.message);
+            });
 
-}());
+        }
 
+    };
 
+    return {
+        profileModel: profileModel,
+        details: details
+    };
+})();
 
 // START_CUSTOM_CODE_profileView
 

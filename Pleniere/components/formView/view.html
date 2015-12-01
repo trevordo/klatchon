@@ -1,124 +1,41 @@
-<div data-role="view" data-title="Add Seminar" data-layout="main" data-show="app.formView.onShow" data-after-show="app.formView.afterShow" data-init="app.formView.onInit" data-model="app.formView">
-	<div id="formViewModel" class="form-view">
-		<form id="myform">
+<div data-role="view" data-title="Form" data-layout="main" data-model="app.formView" data-show="app.formView.onShow" data-after-show="app.formView.afterShow">
+    <div id="formViewModel" class="form-view">
+        <form>
+            <ul class="form-content" data-role="listview" data-style="inset">
+                <li>
 
-			<ul class="form-content" data-role="listview" data-style="inset">
-				<li>
-                    <label>
-                        Title
-						<input data-bind="value: formViewModel.fields.title" placeholder="&#34;Presentation Title&#34;" type="text"/>
-					</label>
-				</li>
-				<li>
-					<label>
-						Speaker
-						<input data-bind="value: formViewModel.fields.speakername" placeholder="john doe" type="text">
-					</label>
-				</li>
-				<li>
-					<label>
-						Start date/time
-						<input data-bind="value: formViewModel.fields.startdate" type="datetime-local">
-					</label>
-				</li>
-				<li>
-					<label>
-						End date/time
-						<input data-bind="value: formViewModel.fields.enddate" type="datetime-local">
-					</label>
-				</li>
+                    <label>Username
+                        <input data-bind="value: formViewModel.fields.username" type="text">
+                    </label>
 
-				<li>
-					<label>
-						Host
-						<input data-bind="value: formViewModel.fields.hostname" placeholder="jane doe" type="text">
-					</label>
-				</li>
-				<li>
-					<label>
-						Department
-						<input data-bind="value: formViewModel.fields.department" placeholder="Physics" type="text">
-					</label>
-				</li>
-				<li>
-					<label>
-						Room
-						<input data-bind="value: formViewModel.fields.room" type="text">
-					</label>
-				</li>
-				<li>
-					<label>
-						Building
-						<input data-bind="value: formViewModel.fields.building" type="text">
-					</label>
-				</li>
-			</ul>
-			<div class="button-group">
-				<a data-role="button" data-bind="events: { click: cancel }">Clear</a>
-				<a data-role="button" data-bind="events: { click: submit }">Submit</a>               
-			</div>
+                </li>
+                <li>
+
+                    <label>Username
+                        <input data-bind="value: formViewModel.fields.username1" type="text">
+                    </label>
+
+                </li>
+                <li>
+
+                    <label>Date
+                        <input data-bind="value: formViewModel.fields.date" type="date">
+                    </label>
+
+                </li>
+            </ul>
+
             <div class="button-group">
-				<a data-role="button" class="primary"  onclick="addImage()">Upload a seminar poster photo</a>
-				            
-			</div>
+                <a data-role="button" data-bind="events: { click: formViewModel.cancel }">Cancel</a>
+                <a class="primary" data-role="button" data-bind="events: { click: formViewModel.submit }">Confirm</a>
+            </div>
+        </form>
+        <!-- START_CUSTOM_CODE_formViewModel -->
+        <!-- Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes -->
 
-		</form>
-      
-		 
-        
-        <!-- Script for Camera App---->
-
-     <script language="JavaScript" type="Text/JavaScript">
-
-			function addImage() {
-				var everliveApiKey = "koWUnpcxRvIqHF7T";
-				// var everliveScheme = 'https';
-
-				var everlive = new Everlive({
-					apiKey: everliveApiKey,
-					//scheme: everliveScheme
-				});
-
-				function onPictureSuccess(imageData) {
-					var file = {
-						Filename: Math.random().toString(36).substring(2, 15) + ".jpg",
-						ContentType: "image/jpeg",
-						base64: imageData,
-					};
-
-					everlive.Files.create(file, function (response) {
-						var fileUri = response.result.Uri;
-
-						var imgEl = document.createElement("img");
-						imgEl.setAttribute('src', fileUri);
-						imgEl.style.position = "absolute";
-						//document.body.appendChild(imgEl);
-						window.plugins.toast.showShortCenter("Seminar photo successfully uploaded");
-					}, function (err) {
-						window.plugins.toast.showShortCenter("Unfortunately the upload failed: " + err.message);
-						//navigator.notification.alert("Unfortunately the upload failed: " + err.message);
-					});
-				};
-
-				function onPictureError() {
-					window.plugins.toast.showShortCenter("Unfortunately we were not able to retrieve the image");
-					//navigator.notification.alert("Unfortunately we were not able to retrieve the image");
-				};
-
-				var cameraConfig = {
-					destinationType: Camera.DestinationType.DATA_URL,
-					targetWidth: 1800,
-					targetHeight: 2100
-				};
-
-				navigator.camera.getPicture(onPictureSuccess, onPictureError, cameraConfig);
-
-			};
-
-
-	</script>
-
+        <!-- END_CUSTOM_CODE_formViewModel -->
     </div>
+
     <!-- START_CUSTOM_CODE_formView -->
     <!-- END_CUSTOM_CODE_formView -->
 </div>

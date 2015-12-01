@@ -9,16 +9,11 @@
           "type": "kendo-ui-mobile:about",
           "name": "homeViewModel",
           "appName": "Pleniere",
+          "appVersion": "Version 1",
           "appDescription": "ABC",
-          "contactButton": true,
-          "contactLabel": "Contact us",
-          "contactMail": "support@example.com",
-          "facebookButton": true,
-          "facebookLabel": "Like us on Facebook",
-          "facebookLink": "https://www.facebook.com/Telerik",
-          "twitterButton": true,
-          "twitterLabel": "Follow us on Twitter",
-          "twitterLink": "https://twitter.com/telerik"
+          "contactButton": false,
+          "facebookButton": false,
+          "twitterButton": false
         }
       ],
       "title": "Pleniere",
@@ -122,8 +117,7 @@
     }
   ],
   "name": "kendoUiMobileApp",
-  "navigation": "tabstrip",
+  "navigation": "drawer",
   "view": "authenticationView",
-  "transition": "slide",
   "skin": "flat"
 }

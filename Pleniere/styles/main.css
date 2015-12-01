@@ -34,12 +34,12 @@
 
 #kendoUiMobileApp.km-flat .button-group .km-button.primary {
     color: #fff;
-    background-color: #1e517a;
+    background-color: #10c4b2;
 }
 
 #kendoUiMobileApp.km-ios7 .button-group .km-button.primary {
     color: #fff;
-    background-color: #1e517a;
+    background-color: #007aff;
 }
 
 #kendoUiMobileApp.km-android .button-group .km-button.primary {
@@ -125,6 +125,24 @@
 
 #kendoUiMobileApp #navigation-container .active:after {
     color: #fff;
+}
+
+#kendoUiMobileApp.km-nova #navigation-container.km-tabstrip .km-button {
+    vertical-align: middle;
+}
+
+#kendoUiMobileApp.km-nova p {
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+#kendoUiMobileApp.km-nova span.km-switch.km-switc {
+    color: #ff4350;
+}
+
+#kendoUiMobileApp.km-nova span.km-switch.km-switch-on input[type=checkbox]:checked + span + span {
+    border-color: #ff4350;
+    background-color: #ff4350;
 }
 
 

@@ -1,15 +1,15 @@
-<div data-role="view" data-title="Profile" data-layout="main" data-model="app.profile.profileViewModel" data-show="app.profileView.onShow" data-after-show="app.profileView.afterShow" data-bind="events: { show: detailsShow }">
+<div data-role="view" data-title="Profile" data-layout="main" data-model="app.profileView.profileModel" data-show="app.profileView.details.onShow">
     <!-- START_CUSTOM_CODE_profileView -->
-    
-    <ul data-role="listview" data-style="" data-template="profileViewModelTemplate">
-    </ul>
+    	<p>firstname: <span data-bind="text: firstname"></span>
+            
+    </p>
+		<p>lastname: <span data-bind="text: lastname"></span>
+            
+    </p>
+		<p>Displayname: <span data-bind="text: DisplayName"></span>
+            
+    </p>
+
     <!-- END_CUSTOM_CODE_profileView -->
-    <script type="text/x-kendo-template" id="profileViewModelTemplate" data-bind="{ source: profileViewModel}">
-        <div>
-            <h2>#: User().DisplayName #</h2>
-            <p>#: data['firstname'] #</p>
-            <p>#: data['lastname'] #</p>
-        </div>
-    </script>
 </div>
-<!-- profile Template -->
+    

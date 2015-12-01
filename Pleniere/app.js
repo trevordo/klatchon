@@ -1,3 +1,5 @@
+'use strict';
+
 (function() {
     var app = {
         data: {}
@@ -6,20 +8,14 @@
     var bootstrap = function() {
         $(function() {
             app.mobileApp = new kendo.mobile.Application(document.body, {
-
-                //transition: 'slide',
                 skin: 'flat',
-                initial: 'components/authenticationView/view.html',
-                statusBarStyle: 'black-translucent'
+                initial: 'components/authenticationView/view.html'
             });
         });
     };
 
     if (window.cordova) {
         document.addEventListener('deviceready', function() {
-        
-	feedback.initialize('a6f7b000-8689-11e5-bfa7-d11898997974');
-
             if (navigator && navigator.splashscreen) {
                 navigator.splashscreen.hide();
             }
@@ -27,11 +23,11 @@
             var element = document.getElementById('appDrawer');
             if (typeof(element) != 'undefined' && element !== null) {
                 if (window.navigator.msPointerEnabled) {
-                    $("#navigation-container").on("MSPointerDown", "a", function(event) {
+                    $('#navigation-container').on('MSPointerDown', 'a', function(event) {
                         app.keepActiveState($(this));
                     });
                 } else {
-                    $("#navigation-container").on("touchstart", "a", function(event) {
+                    $('#navigation-container').on('touchstart', 'a', function(event) {
                         app.keepActiveState($(this));
                     });
                 }
@@ -45,7 +41,7 @@
 
     app.keepActiveState = function _keepActiveState(item) {
         var currentItem = item;
-        $("#navigation-container li a.active").removeClass("active");
+        $('#navigation-container li a.active').removeClass('active');
         currentItem.addClass('active');
     };
 

@@ -17,7 +17,6 @@ app.authenticationView = kendo.observable({
                 if (error.message) {
                     alert(error.message);
                 }
-
                 return false;
             }
 
@@ -46,12 +45,6 @@ app.authenticationView = kendo.observable({
             displayName: '',
             email: '',
             password: '',
-            firstname: '',
-            lastname: '',
-            faculty: '',
-            domain: '',
-            interests: '',
-            affiliation: '',
             validateData: function(data) {
                 if (!data.email) {
                     alert('Missing email');
@@ -73,7 +66,6 @@ app.authenticationView = kendo.observable({
                 if (!model.validateData(model)) {
                     return false;
                 }
-
                 provider.Users.login(email, password, successHandler, init);
             },
             register: function() {
@@ -81,18 +73,9 @@ app.authenticationView = kendo.observable({
                     email = model.email.toLowerCase(),
                     password = model.password,
                     displayName = model.displayName,
-                    firstname = model.firstname,
-                    lastname = model.lastname,
-                    faculty = model.faculty,
-                    affiliation = model.affiliation,
                     attrs = {
                         Email: email,
-                        DisplayName: displayName,
-                        firstname: firstname,
-                        lastname: lastname,
-                        faculty: faculty,
-                        affiliation: affiliation,
-                        
+                        DisplayName: displayName
                     };
 
                 if (!model.validateData(model)) {
