@@ -1,0 +1,15 @@
+<div data-role="view" data-title="Profile" data-layout="main" data-model="app.profile.profileViewModel" data-show="app.profileView.onShow" data-after-show="app.profileView.afterShow" data-bind="events: { show: detailsShow }">
+    <!-- START_CUSTOM_CODE_profileView -->
+    
+    <ul data-role="listview" data-style="" data-template="profileViewModelTemplate">
+    </ul>
+    <!-- END_CUSTOM_CODE_profileView -->
+    <script type="text/x-kendo-template" id="profileViewModelTemplate" data-bind="{ source: profileViewModel}">
+        <div>
+            <h2>#: User().DisplayName #</h2>
+            <p>#: data['firstname'] #</p>
+            <p>#: data['lastname'] #</p>
+        </div>
+    </script>
+</div>
+<!-- profile Template -->

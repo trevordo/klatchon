@@ -1,0 +1,17 @@
+<div data-role="view" data-title="Update Profile" data-layout="main" data-model="app.profileUpdateView" data-show="app.profileUpdateView.onShow" data-after-show="app.profileUpdateView.afterShow">
+    <div id="profileUpdateViewModel" class="form-view">
+        <form>
+            <ul class="form-content" data-role="listview" data-style="inset">
+            </ul>
+
+            <div class="button-group">
+                <a data-role="button" data-bind="events: { click: profileUpdateViewModel.cancel }">Cancel</a>
+                <a class="primary" data-role="button" data-bind="events: { click: profileUpdateViewModel.submit }">Confirm</a>
+            </div>
+        </form>
+        <!-- START_CUSTOM_CODE_profileUpdateViewModel -->
+        <!-- END_CUSTOM_CODE_profileUpdateViewModel -->
+    </div>
+    <!-- START_CUSTOM_CODE_profileUpdateView -->
+    <!-- END_CUSTOM_CODE_profileUpdateView -->
+</div>

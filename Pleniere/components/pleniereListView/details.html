@@ -6,8 +6,78 @@
         </div>
     </header>
 
-    <h3 data-bind="text: currentItem.startdate"></h3>
-    <p data-bind="text: currentItem.speakername"></p>
+    
+    <h2> <span data-bind="text: currentItem.title"></span></h2>
+    <h3> <span data-bind="text: currentItem.speakername"></span></h3>
+    <h4><span data-bind="text: currentItem.credential"></span> <span data-bind="text: currentItem.affiliation"></span></h3>
+    <h4 data-bind="text: currentItem.bio"></h2>
+    <p data-bind="text: currentItem.abstract"><p>
+    <p><span data-bind="text: currentItem.startdate"></span></p>
+    <p>Location:</p>        
+    <p><span data-bind="text: currentItem.building"></span> <span data-bind="text: currentItem.room"></span></p>
+    <p>Host:  <span data-bind="text: currentItem.hostname"></span></p>
+    <p>Department: <span data-bind="text: currentItem.department"></span></p>
+    <p></p>
+    <p data-bind="text: currentItem.refreshment"></p>
+    <br/><br/>
+    <div class="button-group">
+    <button class="primary" data-role="button" class="button" onclick="createEventInteractively()">Add to Calendar</button>
+    </div>
+    <!-- START_CUSTOM_CODE_dataListViewModel -->
+
+        
+  <script language="JavaScript" type="Text/JavaScript">
+      
+	 // function onSuccess(msg) {
+  	 //  alert('Calendar success: ' + JSON.stringify(msg));
+ 	 //}
+      
+      function onSuccess() {
+     //     window.plugins.toast.showShortCenter("Event Added to Calendar");
+      }
+
+	  function onError(msg) {
+  	  alert('Calendar error: ' + JSON.stringify(msg));
+  }
+      
+	function createEventInteractively() {
+    var model = window.app.mobileApp.view().model,
+        str_title = model.get("currentItem.title"),
+        str_room = model.get("currentItem.room"),
+        str_building = model.get("currentItem.building"),
+        str_loc = str_building + " " + str_room,
+        str_notes = "Seminar Speaker: " + model.get("currentItem.speakername"),
+        startDate = model.get("currentItem.startdate"),
+        endDate = model.get("currentItem.enddate"); //set date as per your requirements
+
+        // clean up the dates a bit
+  		//startDate.setMinutes(0);
+  		//endDate.setMinutes(0);
+ 		//startDate.setSeconds(0);
+ 		//endDate.setSeconds(0);
+
+  		// add a few hours to the dates, JS will automatically update the date (+1 day) if necessary
+		//startDate.setHours(startDate.getHours() );
+		//endDate.setHours(endDate.getHours() + 1);
+ 
+    // Validate that you have accessed all values correctly
+    console.log(str_title + " " + str_loc + " " + str_notes + " " + startDate + " " + endDate);
+ 
+    window.plugins.calendar.createEventInteractively(str_title, str_loc, str_notes, startDate, endDate, onSuccess, onError);
+}
+    
+ 
+  function deleteEvent() {
+    window.plugins.calendar.deleteEvent(title, loc, notes, startDate, str_endDate, onSuccess, onError);
+  }
+
+  window.onerror = function(msg, file, line) {
+    alert(msg + '; ' + file + '; ' + line);
+  };    
+        
+
+    </script>
+
 
     <!-- START_CUSTOM_CODE_pleniereListViewModel -->
     <!-- END_CUSTOM_CODE_pleniereListViewModel -->

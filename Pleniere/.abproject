@@ -42,6 +42,7 @@
     "ID_RESOLUTION_HD720P"
   ],
   "CorePlugins": [
+    "com.telerik.feedback",
     "org.apache.cordova.camera",
     "org.apache.cordova.network-information"
   ]

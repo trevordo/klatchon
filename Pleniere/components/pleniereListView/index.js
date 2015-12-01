@@ -56,7 +56,11 @@ app.pleniereListView = kendo.observable({
                     }
                 }
             },
+            serverFiltering: true,
+            filter: { field: 'startdate', operator: 'gte', value: new Date() },
+            //filter: { field: 'interestsid', operator: 'contains', value: 'Pharmacy' },
             serverSorting: true,
+            sort: { field: 'startdate', dir: 'asc' },
             serverPaging: true,
             pageSize: 50
         },

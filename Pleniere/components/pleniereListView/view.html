@@ -2,7 +2,8 @@
     <!-- START_CUSTOM_CODE_pleniereListView -->
     <!-- END_CUSTOM_CODE_pleniereListView -->
     <!--  Certain features like grouping and inset styling are not supported when endless scroll is enabled. -->
-    <ul data-role="listview" data-style="" data-template="pleniereListViewModelTemplate" data-bind="{ source: pleniereListViewModel.dataSource, events: {click: pleniereListViewModel.itemClick}}" data-pull-to-refresh="true" data-endless-scroll="true">
+    <ul data-role="listview" data-style="" data-template="pleniereListViewModelTemplate" data-bind="{ source: pleniereListViewModel.dataSource, events: {click: pleniereListViewModel.itemClick}}" data-pull-to-refresh="true" 
+        data-endless-scroll="true" data-filterable="{field: 'title', operator: 'contains'}">
     </ul>
     <!-- START_CUSTOM_CODE_pleniereListViewModel -->
     <!-- END_CUSTOM_CODE_pleniereListViewModel -->
@@ -10,6 +11,7 @@
         <div class="image-with-text">
             <h3>#: data['title'] #</h3>
             <p>#: data['speakername'] #</p>
+            <p>#: data['startdate'] #</p>
         </div>
     </script>
 </div>

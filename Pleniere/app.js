@@ -7,7 +7,7 @@
         $(function() {
             app.mobileApp = new kendo.mobile.Application(document.body, {
 
-                transition: 'slide',
+                //transition: 'slide',
                 skin: 'flat',
                 initial: 'components/authenticationView/view.html',
                 statusBarStyle: 'black-translucent'
@@ -17,6 +17,9 @@
 
     if (window.cordova) {
         document.addEventListener('deviceready', function() {
+        
+	feedback.initialize('a6f7b000-8689-11e5-bfa7-d11898997974');
+
             if (navigator && navigator.splashscreen) {
                 navigator.splashscreen.hide();
             }

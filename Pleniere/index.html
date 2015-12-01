@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <link href="kendo/styles/kendo.mobile.all.min.css" rel="stylesheet">
     <link href="styles/main.css" rel="stylesheet">
-
+    
     <script src="cordova.js"></script>
     <script src="kendo/js/jquery.min.js"></script>
     <script src="kendo/js/kendo.mobile.min.js"></script>
@@ -20,10 +20,13 @@
     <script src="components/authenticationView/index.js"></script>
     <script src="components/pleniereListView/index.js"></script>
     <script src="components/homeView/index.js"></script>
+    <script src="components/profileView/index.js"></script>
+    <script src="components/profileView/users.js"></script>
     <div data-role="layout" data-id="main">
         <header data-role="header">
-            <div data-role="navbar">
+            <div data-role="navbar" class="km-dark">
                 <span data-role="view-title"></span>
+                 <a data-role="button" href="#appDrawer" data-rel="drawer" data-align="left" data-icon="drawer-button"></a>
             </div>
         </header>
 
@@ -33,7 +36,7 @@
             <div data-role="tabstrip" id="navigation-container">
                 <a href="components/homeView/view.html" data-icon="home">Pleniere</a>
                 <a href="components/pleniereListView/view.html" data-icon="organize">Upcoming Seminar</a>
-                <a href="components/formView/view.html" data-icon="mostviewed">Form</a>
+                <a href="components/formView/view.html" data-icon="mostviewed">Add Seminar</a>
             </div>
         </footer>
     </div>
@@ -50,6 +53,20 @@
         <footer data-role="footer">
         </footer>
     </div>
+      <div id="appDrawer" data-role="drawer" data-title="Navigation">
+        <header data-role="header">
+            <div data-role="navbar">
+                <span data-role="view-title"></span>
+            </div>
+        </header>
+        <ul id="navigation-container" data-role="listview">
+            <li><a href="components/homeView/view.html" data-icon="home">Home View</a></li>
+            <li></li>
+            <li><a href="components/formView/view.html" data-icon="bookmarks">Form</a></li>
+            <li><a href="components/profileView/view.html" data-icon="info">Profile</a></li>
+        </ul>
+    </div>
+
     <!-- START_CUSTOM_CODE_kendoUiMobileApp -->
     <!-- END_CUSTOM_CODE_kendoUiMobileApp -->
 </body>
