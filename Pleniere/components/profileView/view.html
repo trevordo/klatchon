@@ -1,15 +1,15 @@
-<div data-role="view" data-title="Profile" data-layout="main" data-model="app.profileView.profileModel" data-show="app.profileView.details.onShow">
+<div data-role="view" data-title="Profile" data-layout="main" data-model="app.profileView" data-show="app.profileView.onShow" data-after-show="app.profileView.afterShow">
+
     <!-- START_CUSTOM_CODE_profileView -->
-    	<p>firstname: <span data-bind="text: firstname"></span>
-            
+    <p>firstname: <span data-bind="text: firstname"></span>
+
     </p>
-		<p>lastname: <span data-bind="text: lastname"></span>
-            
+    <p>lastname: <span data-bind="text: lastname"></span>
+
     </p>
-		<p>Displayname: <span data-bind="text: DisplayName"></span>
-            
+    <p>Displayname: <span data-bind="text: DisplayName"></span>
+
     </p>
 
     <!-- END_CUSTOM_CODE_profileView -->
 </div>
-    

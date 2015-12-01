@@ -103,6 +103,14 @@
       "title": "Form",
       "addToNavigation": true,
       "icon": "mostviewed"
+    },
+    {
+      "type": "kendo-ui-mobile:view",
+      "name": "profileView",
+      "components": [],
+      "title": "Profile",
+      "addToNavigation": true,
+      "icon": "contacts"
     }
   ],
   "dataProviders": [
